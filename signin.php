@@ -13,7 +13,7 @@
                                 ce soit.
                             </small>
                         </div>
-                        <div class="form-group">
+                        <div>
                             <label for="InputUsername1">Nom d'utilisateur</label>
                             <input type="text" id="InputUsername1"
                             name="username_signup" required>
@@ -30,7 +30,7 @@
                             <label for="InputPassword2">Entrez votre mot de passe de nouveau</label>
                             <input type="password" name="password2_signup" required>
                         </div>
-                        <div id="check">
+                        <div>
                             <input type="checkbox">
                             <label for="Check1">Accepter les <a href="#">termes et conditions</a></label>
                         </div>

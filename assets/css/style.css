@@ -133,7 +133,7 @@ form > div {
 }
 form > div input {
   margin-top: 0.5em;
-  border: 2px solid lightblue;
+  border: 2px solid #293475;
   background-color: transparent;
   height: 3em;
   width: 100%;
@@ -145,7 +145,7 @@ form > div small {
 form > div button {
   width: 8em;
   background-color: transparent;
-  border: 3px solid lightblue;
+  border: 3px solid #293475;
   background-color: transparent;
   height: 2em;
   border-radius: 25px;
@@ -164,7 +164,41 @@ form > div button:active {
 }
 form > div button:hover {
   background-color: #b27cc4;
-  color: lightblue;
+  color: #293475;
+  cursor: pointer;
+}
+form > div textarea {
+  margin-top: 0.5em;
+  border: 2px solid #293475;
+  background-color: transparent;
+  height: 6em;
+  width: 100%;
+  border-radius: 15px;
+}
+form > div select {
+  margin-top: 0.5em;
+  border: 2px solid #293475;
+  background-color: transparent;
+  height: 3em;
+  width: 50%;
+  border-radius: 15px;
+}
+form > div #picture {
+  display: none;
+}
+form > div #btnpicture {
+  width: 50%;
+  background-color: transparent;
+  border: 2px solid #293475;
+  background-color: transparent;
+  height: 2em;
+  border-radius: 25px;
+  font-family: "roboto";
+  font-size: 1em;
+  text-align: center;
+}
+form > div #btnpicture:hover {
+  color: #293475;
   cursor: pointer;
 }
 form #check {
@@ -206,14 +240,14 @@ form #check input {
   flex-direction: row;
 }
 #products .sheetrow .aptsheet {
-  background-color: white;
+  background-color: #9b9ea3;
   width: 30%;
   height: 520px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  border: 1px solid black;
+  border: 2px solid #293475;
   border-radius: 10px;
   margin-bottom: 2em;
   transition: all 0.3s ease-out;
@@ -237,15 +271,13 @@ form #check input {
 #products .sheetrow .aptsheet > a {
   text-transform: uppercase;
   width: 8em;
-  background-color: lightblue;
-  border: 1px solid #b27cc4;
-  color: black;
+  background-color: #293475;
+  color: white;
   height: 2em;
   border-radius: 25px;
   font-family: "roboto";
   font-size: 0.8em;
-  position: relative;
-  transition: all 1ms linear;
+  margin-top: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,7 +285,7 @@ form #check input {
 }
 #products .sheetrow .aptsheet > a:hover {
   background-color: #b27cc4;
-  color: lightblue;
+  color: #293475;
   cursor: pointer;
 }
 

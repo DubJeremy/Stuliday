@@ -77,6 +77,47 @@ form
                 cursor: pointer;
             }
         }
+        textarea 
+        {
+            margin-top: 0.5em;
+            border: 2px solid $blue;
+            background-color: transparent;
+            height: 6em;
+            width: 100%;
+            border-radius: 15px;
+        }
+        select
+        {
+            margin-top: 0.5em;
+            border: 2px solid $blue;
+            background-color: transparent;
+            height: 3em;
+            width: 50%;
+            border-radius: 15px;
+        }
+        #picture
+        {
+            display: none;
+        }
+        #btnpicture
+        {
+            width: 50%;
+            background-color: transparent;
+            border: 2px solid $blue;
+            background-color: transparent;
+            height: 2em;
+            border-radius: 25px;
+            font-family: "roboto";
+            font-size: 1em;
+            text-align: center;
+
+
+            &:hover
+            {
+                color: $blue;
+                cursor: pointer;
+            }
+        }
     }
     #check
     {
@@ -119,11 +160,11 @@ form
 
         .aptsheet
         {
-            background-color: white;
+            background-color: $grey;
             width: 30%;
             height: 520px;
             @include flex ($dir: column, $just: flex-start);
-            border: 1px solid black;
+            border: 2px solid $blue;
             border-radius: 10px;
             margin-bottom: 2em;
             transition: all 0.3s ease-out;
@@ -152,14 +193,12 @@ form
                 text-transform: uppercase;
                 width: 8em;
                 background-color: $blue;
-                border: 1px solid $pink;
-                color: black;
+                color: white;
                 height: 2em;
                 border-radius: 25px;
                 font-family: "roboto";
                 font-size: 0.8em;
-                position: relative;
-                transition: all 1ms linear;
+                margin-top: 3em;
                 @include flex;
 
                 &:hover
