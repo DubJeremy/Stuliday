@@ -1,4 +1,43 @@
 <?php require 'nav.php' ?>
+<?php
+$alert = false;
+
+if (!empty($_POST['email_login']) && !empty($_POST['password_login']) && isset($_POST['submit_login'])) {
+    $email = htmlspecialchars($_POST['email_login']);
+    $password = htmlspecialchars($_POST['password_login']);
+    try {
+        $sqlMail = "SELECT * FROM users WHERE email = '{$email}'";
+        $resultMail = $connect->query($sqlMail);
+        $user = $resultMail->fetch(PDO::FETCH_ASSOC);
+        // var_dump($user);
+        if ($user) {
+            $dbpassword = $user['password'];
+            if (password_verify($password, $dbpassword)) {
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['username'] = $user['username'];
+                $alert = true;
+                $type = 'success';
+                $message = "Vous êtes désormais connectés";
+                unset($_POST);
+                header('Location: profile.php');
+            } else {
+                $alert = true;
+                $type = 'danger';
+                $message = "Le mot de passe est erroné";
+                unset($_POST);
+            }
+        } else {
+            $alert = true;
+            $type = 'warning';
+            $message = "Ce compte n'existe pas";
+            unset($_POST);
+        }
+    } catch (PDOException $error) {
+        echo "Error: " . $error->getMessage();
+    }
+}
+?>
     <body>
             <section id="login_sigin">
                 <div>
