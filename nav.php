@@ -1,3 +1,4 @@
+<?php require 'inc/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,7 +12,7 @@
     <body>
         <header>
             <nav id="nav">
-                <h1>Stuliday</h1>
+                <h1><span>S</span>tuliday</h1>
                 <div>
                     <ul>
                         <li>
@@ -31,13 +32,25 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="profil.php"><i class="far fa-user-circle"></i></a>
-                        </li>
-                        <li>
-                            <p>
-                            <a href="signin.php">Inscription</a>  / <a href="login.php">Connexion</a>
-                        </li>
+                        <?php
+                        if (empty($_SESSION)) {
+                        ?>
+                            <li>
+                                <p>
+                                <a href="signin.php">Inscription</a>  / <a href="login.php">Connexion</a>
+                            </li>
+                        <?php
+                        } else {
+                        ?>
+                            <li>
+                                <a href="profil.php"><i class="far fa-user-circle"></i></a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="?logout">Se déconnecter</a>
+                            </li>
+                        <?php
+                        }
+                        ?>
                     </ul>
                     <i id="burger" class="fas fa-bars"></i>
                 </div>

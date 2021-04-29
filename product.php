@@ -2,7 +2,7 @@
         <body>
             <section id="products">
                 <h2>
-                    Appartements
+                    Annonces
                 </h2>
                 <div class="sheetrow">
                     <div class="aptsheet">

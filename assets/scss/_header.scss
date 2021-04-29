@@ -8,10 +8,16 @@ nav
     {
         color: black;
         margin-left: 2em;
-        font-family: "allura";
+
         font-weight: 900;
-        font-size: 3em;
+        font-size: 2.5em;
         text-shadow: 1px 1px 0px $pink;
+
+        span 
+        {
+            font-family: "allura";
+            font-size: 2em;
+        }
     }
     div>ul 
     {
@@ -71,12 +77,17 @@ header
         >h2 
         {
             color: black;
-            font-family: "allura";
             font-weight: 900;
-            font-size: 6em;
+            font-size: 4em;
             text-shadow: 2px 2px 0px $pink;
             text-align: center;
             width: 100%;
+
+            span 
+            {       
+            font-family: "allura";
+            font-size: 2em;
+            }
         }
         >p 
         {

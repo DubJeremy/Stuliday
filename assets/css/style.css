@@ -29,10 +29,13 @@ nav {
 nav h1 {
   color: black;
   margin-left: 2em;
-  font-family: "allura";
   font-weight: 900;
-  font-size: 3em;
+  font-size: 2.5em;
   text-shadow: 1px 1px 0px #b27cc4;
+}
+nav h1 span {
+  font-family: "allura";
+  font-size: 2em;
 }
 nav div > ul {
   display: flex;
@@ -84,12 +87,15 @@ header > div {
 }
 header > div > h2 {
   color: black;
-  font-family: "allura";
   font-weight: 900;
-  font-size: 6em;
+  font-size: 4em;
   text-shadow: 2px 2px 0px #b27cc4;
   text-align: center;
   width: 100%;
+}
+header > div > h2 span {
+  font-family: "allura";
+  font-size: 2em;
 }
 header > div > p {
   margin-top: 1.5em;
@@ -110,9 +116,8 @@ header > div > p {
 }
 #login_sigin > div h2 {
   width: 100%;
-  font-family: "allura";
   text-align: center;
-  font-size: 4em;
+  font-size: 3em;
   text-shadow: 1px 1px 0px #b27cc4;
 }
 #login_sigin > div .already {
@@ -226,9 +231,8 @@ form #check input {
 }
 #products h2 {
   width: 100%;
-  font-family: "allura";
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
   text-shadow: 1px 1px 0px #b27cc4;
   margin-bottom: 2em;
 }
@@ -241,7 +245,7 @@ form #check input {
 }
 
 .aptsheet {
-  background-color: #9b9ea3;
+  background-color: #cdd4df;
   width: 30%;
   height: 550px;
   display: flex;
@@ -272,11 +276,14 @@ form #check input {
 .aptsheet > a {
   text-transform: uppercase;
   width: 8em;
-  background-color: #293475;
-  color: white;
+  background-color: transparent;
+  font-family: "roboto";
+  border: 2px solid #293475;
+  color: black;
   height: 2em;
   border-radius: 25px;
   font-family: "roboto";
+  font-weight: 700;
   font-size: 0.8em;
   margin-top: 3em;
   display: flex;
@@ -336,8 +343,6 @@ form #check input {
   margin-top: 5em;
 }
 #profil h2 {
-  width: 100%;
-  font-family: "allura";
   text-align: center;
   font-size: 3em;
   text-shadow: 1px 1px 0px #b27cc4;

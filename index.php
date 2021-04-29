@@ -2,7 +2,7 @@
     <body>
     <!--------------------------------------------------->
            <div>
-            <h2>Stuliday</h2>
+            <h2><span>S</span>tuliday</h2>
             <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur, eveniet sapiente. Error neque harum saepe accusamus quidem laborum mollitia officiis inventore, numquam, dolor iste possimus, sint quo consequatur ea molestias.
 
