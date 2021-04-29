@@ -157,60 +157,58 @@ form
     {
         width: 100%;
         @include flex ($just: space-between);
+    }
+}
+.aptsheet
+{
+    background-color: $grey;
+    width: 30%;
+    height: 550px;
+    @include flex ($dir: column, $just: flex-start);
+    border: 2px solid $blue;
+    border-radius: 10px;
+    margin-bottom: 2em;
+    transition: all 0.3s ease-out;
 
-        .aptsheet
+    &:hover
+    {
+        box-shadow: 0px 8px 16px 3px rgba( #000, .6 );
+        transform: translateY( -3px ), scale( 1.05 ) ,rotateX( 15deg);
+    }
+    img 
+    {
+        width: 95%;
+        height: 250px;
+        margin: 20px 10px 20px 10px;
+        border-radius: 5px;
+    }
+    p 
+    {
+        width: 80%;
+        margin-top: 1em;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    >a
+    {
+        text-transform: uppercase;
+        width: 8em;
+        background-color: $blue;
+        color: white;
+        height: 2em;
+        border-radius: 25px;
+        font-family: "roboto";
+        font-size: 0.8em;
+        margin-top: 3em;
+        @include flex;
+
+        &:hover
         {
-            background-color: $grey;
-            width: 30%;
-            height: 520px;
-            @include flex ($dir: column, $just: flex-start);
-            border: 2px solid $blue;
-            border-radius: 10px;
-            margin-bottom: 2em;
-            transition: all 0.3s ease-out;
-
-            &:hover
-            {
-                box-shadow: 0px 8px 16px 3px rgba( #000, .6 );
-                transform: translateY( -3px ), scale( 1.05 ) ,rotateX( 15deg);
-            }
-            img 
-            {
-                width: 95%;
-                height: 250px;
-                margin: 20px 10px 20px 10px;
-                border-radius: 5px;
-            }
-            p 
-            {
-                width: 80%;
-                margin-top: 1em;
-                text-align: center;
-                margin-bottom: 1em;
-            }
-            >a
-            {
-                text-transform: uppercase;
-                width: 8em;
-                background-color: $blue;
-                color: white;
-                height: 2em;
-                border-radius: 25px;
-                font-family: "roboto";
-                font-size: 0.8em;
-                margin-top: 3em;
-                @include flex;
-
-                &:hover
-                {
-                    background-color: $pink;
-                    color: $blue;
-                    cursor: pointer;
-                }
-            }
+            background-color: $pink;
+            color: $blue;
+            cursor: pointer;
         }
     }
-
 }
 // ----------------------------------------
 #productsheet
@@ -230,5 +228,51 @@ form
     {
         width: 70%;
         margin-top: 1em;
+    }
+}
+// ----------------------------------------
+#profil
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+
+    h2 
+    {
+        width: 100%;
+        font-family: "allura";
+        text-align: center;
+        font-size: 3em;
+        text-shadow: 1px 1px 0px $pink;
+        margin-bottom: 1em;
+    }
+    h3 
+    {
+        font-size: 1.5em;
+        height: 2em;
+    }
+    >a
+    {
+        text-transform: uppercase;
+        width: 15em;
+        background-color: transparent;
+        border: 2px solid $blue;
+        color: black;
+        height: 2em;
+        border-radius: 25px;
+        font-family: "roboto";
+        font-size: 0.8em;
+        margin-top: 3em;
+        @include flex;
+        margin-left: auto;
+        margin-right: auto;
+
+        &:hover
+        {
+            background-color: $pink;
+            color: white;
+            cursor: pointer;
+        }
     }
 }
