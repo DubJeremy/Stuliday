@@ -1,0 +1,88 @@
+nav
+{
+    @include flex ($just: space-between);
+    height: 7em;
+    width: 100%;
+
+    h1 
+    {
+        color: black;
+        margin-left: 2em;
+        font-family: "allura";
+        font-weight: 900;
+        font-size: 3em;
+        text-shadow: 1px 1px 0px $pink;
+    }
+    div>ul 
+    {
+        @include flex;
+        margin-right: 1em;
+        width: 40em;
+
+        li 
+        {
+            margin-right: 2em;
+
+            &:first-child
+            {
+                margin-right: 2em;
+            }
+            &:nth-child(2)
+            {
+                margin-right: 6em;
+            }
+            a 
+            {
+                color: black;
+                font-family: "roboto";
+                font-size: 1.2em;
+
+                &:hover
+                {
+                    color: $pink;
+                    transition: 0.3s;
+                }
+            }
+
+            >ul
+            {
+                display: none;
+            }
+        }
+    }
+}
+#burger
+{
+    display: none;
+}
+header
+{
+    height: 100vh;
+
+    >div
+    {
+        height: 40em;
+        width: 45%;
+        @include flex($just: flex-start, $dir: column);
+        margin-top: 12em;
+        margin-left: auto;
+        margin-right: auto;
+        
+        >h2 
+        {
+            color: black;
+            font-family: "allura";
+            font-weight: 900;
+            font-size: 6em;
+            text-shadow: 2px 2px 0px $pink;
+            text-align: center;
+            width: 100%;
+        }
+        >p 
+        {
+            margin-top: 1.5em;
+            text-align: center;
+            font-size: 1.5em;
+        }
+    }
+}
