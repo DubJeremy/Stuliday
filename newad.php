@@ -10,6 +10,10 @@
                         <label for="InputName">Adresse du bien</label>
                         <input type="text" class="form-control" id="InputName" name="product_name" required>
                     </div>
+                    <div class="form-group">
+                        <label for="InputName">Titre de l'annonce</label>
+                        <input type="text" class="form-control" id="InputName" name="product_name" required>
+                    </div>
                     <div>
                         <label for="InputDescription">Description</label>
                         <textarea id="InputDescription" rows="3" name="home_description" required></textarea>

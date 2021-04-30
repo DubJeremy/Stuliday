@@ -23,6 +23,7 @@ Structure de la base de données :
     
     - biens :
         - adresse (varchar, 255)
+        - titre (varchar, 255)
         - description (text)
         - price (int, 10)
         - author (id of user)

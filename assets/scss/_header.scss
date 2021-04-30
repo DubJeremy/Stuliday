@@ -46,7 +46,7 @@ nav
                 &:hover
                 {
                     color: $pink;
-                    transition: 0.3s;
+                    transition: 0.2s;
                 }
             }
 
@@ -56,6 +56,10 @@ nav
             }
         }
     }
+}
+.deco
+{
+    font-size: 0.8em;
 }
 #burger
 {

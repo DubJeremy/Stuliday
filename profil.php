@@ -21,7 +21,7 @@
                     <a href="fileproduct.php">annonce</a>               
                 </div>
             </div>
-            <a href="newproduct.php">Ajouter une annonce</a>
+            <a href="newad.php">Ajouter une annonce</a>
 
         </section>
 

@@ -19,7 +19,7 @@
                             <a href="index.php">Acceuil</a>
                         </li>
                         <li>
-                            <a href="product.php">Produits</a>
+                            <a href="property.php">Biens</a>
                             <ul>
                                 <li>
                                     <a href="">Catégorie 1</a>
@@ -46,7 +46,7 @@
                                 <a href="profil.php"><i class="far fa-user-circle"></i></a>
                             </li>
                             <li>
-                                <a class="nav-link" href="?logout">Se déconnecter</a>
+                                <a class="deco" href="?logout">Se déconnecter</a>
                             </li>
                         <?php
                         }

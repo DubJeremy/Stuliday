@@ -4,10 +4,10 @@
                 <img src="assets/images/apt1.jpg" alt="appartment">
                 <h2>Appart de fou</h2>
                 <p>
-                    50m² + terasse + spa
+                    price €/nuit
                 </p>
                 <p>
-                    price €/nuit
+                    50m² + terasse + spa
                 </p>
                 <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam et tenetur praesentium laborum nam necessitatibus? In aperiam a nihil asperiores exercitationem atque tenetur nostrum molestias cumque, rem est quaerat sed.

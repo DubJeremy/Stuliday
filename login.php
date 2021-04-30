@@ -11,6 +11,7 @@ if (!empty($_POST['email_login']) && !empty($_POST['password_login']) && isset($
         $user = $resultMail->fetch(PDO::FETCH_ASSOC);
         // var_dump($user);
         if ($user) {
+            var_dump("form ok");
             $dbpassword = $user['password'];
             if (password_verify($password, $dbpassword)) {
                 $_SESSION['id'] = $user['id'];
@@ -20,7 +21,7 @@ if (!empty($_POST['email_login']) && !empty($_POST['password_login']) && isset($
                 $type = 'success';
                 $message = "Vous êtes désormais connectés";
                 unset($_POST);
-                header('Location: profile.php');
+                header('Location: profil.php');
             } else {
                 $alert = true;
                 $type = 'danger';
