@@ -5,11 +5,21 @@
                 Bonjour user!
             </h2>
             <h3>Vos annonces:</h3>
-            <div class="aptsheet">
-                <img src="assets/images/apt.jpg" alt="apartment">
-                <h3>Appartement</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa quam voluptas voluptatum fuga laudantium corporis laboriosam sint, id dolor eos, ab voluptate aliquam. Accusamus ab sed dolore quasi voluptates doloremque!</p>
-                <a href="fileproduct.php">annonce</a>               
+            <div class="sheetrow">
+                <div class="aptsheet">
+                    <img src="assets/images/apt.jpg" alt="apartment">
+                    <h3>Appartement</h3>
+                    <p>price /nuit</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa quam voluptas voluptatum fuga laudantium corporis laboriosam sint, id dolor eos, ab voluptate aliquam. Accusamus ab sed dolore quasi voluptates doloremque!</p>
+                    <a href="fileproduct.php">annonce</a>               
+                </div>
+                <div class="aptsheet">
+                    <img src="assets/images/apt2.jpg" alt="apartment">
+                    <h3>Appartement</h3>
+                    <p>price /nuit</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa quam voluptas voluptatum fuga laudantium corporis laboriosam sint, id dolor eos, ab voluptate aliquam. Accusamus ab sed dolore quasi voluptates doloremque!</p>
+                    <a href="fileproduct.php">annonce</a>               
+                </div>
             </div>
             <a href="newproduct.php">Ajouter une annonce</a>
 

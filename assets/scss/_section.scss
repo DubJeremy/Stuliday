@@ -151,15 +151,18 @@ form
         text-shadow: 1px 1px 0px $pink;
         margin-bottom: 2em;
     }
-    .sheetrow
-    {
-        width: 100%;
-        @include flex ($just: space-between);
-    }
+}
+.sheetrow
+{
+    width: 100%;
+    @include flex;
+    flex-wrap: wrap;
 }
 .aptsheet
 {
     background-color: $grey;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
     width: 30%;
     height: 550px;
     @include flex ($dir: column, $just: flex-start);
@@ -183,7 +186,6 @@ form
     p 
     {
         width: 80%;
-        margin-top: 1em;
         text-align: center;
         margin-bottom: 1em;
     }
@@ -200,7 +202,7 @@ form
         font-family: "roboto";
         font-weight: 700;
         font-size: 0.8em;
-        margin-top: 3em;
+        margin-top: 2em;
         @include flex;
 
         &:hover
@@ -285,7 +287,7 @@ form
         border-radius: 25px;
         font-family: "roboto";
         font-size: 0.8em;
-        margin-top: 3em;
+        margin-top: 1.5em;
         @include flex;
         margin-left: auto;
         margin-right: auto;
