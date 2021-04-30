@@ -23,7 +23,7 @@ $biens = $connect->query($sqlBiens)->fetchAll(PDO::FETCH_ASSOC);
                             <?php echo $bien['price']; ?>€/nuit
                         </p>
                         <p>
-                            <?php echo $bien['description']; ?>
+                            <?php echo $bien['adresse']; ?>
                         </p>         
                         <a href="propertyad.php?id=<?php echo $bien['id']; ?>">
                             annonce

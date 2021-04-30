@@ -20,6 +20,9 @@ $bien = $connect->query($sqlBiens)->fetch(PDO::FETCH_ASSOC);
                 <p>
                     <?php echo $bien['description']; ?>
                 </p>
+                <p>
+                    <?php echo $bien['adresse']; ?>
+                </p>
                 <a href="">Contactez <?php echo $bien['username']; ?></a>        
             </section>
 
