@@ -1,21 +1,26 @@
 <?php require 'nav.php' ?>
+<?php
+
+$id = $_GET['id'];
+
+$sqlBiens = "SELECT b.*, u.username, c.name_category FROM biens AS b LEFT JOIN users AS u ON b.author = u.id LEFT JOIN categories AS c ON b.category = c.id WHERE b.id = {$id} ";
+
+$bien = $connect->query($sqlBiens)->fetch(PDO::FETCH_ASSOC);
+?>
     <body>
             <section id='productsheet'>
                 <img src="assets/images/apt1.jpg" alt="appartment">
-                <h2>Appart de fou</h2>
+                <h2><?php echo $bien['category']; ?></h2>
                 <p>
-                    price €/nuit
+                    <?php echo $bien['price']; ?> €/nuit
                 </p>
                 <p>
-                    50m² + terasse + spa
+                    <?php echo $bien['title']; ?>
                 </p>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam et tenetur praesentium laborum nam necessitatibus? In aperiam a nihil asperiores exercitationem atque tenetur nostrum molestias cumque, rem est quaerat sed.
-                    Nemo voluptatibus quo ab culpa, neque nesciunt placeat veritatis blanditiis sapiente dolore ipsam quos! Dicta, animi. Voluptatem provident facere libero dolor sed eveniet eligendi culpa voluptatum? Labore error ab maiores?
+                    <?php echo $bien['description']; ?>
                 </p>
-                <a href="">Contactez user</a>
-                    
-
+                <a href="">Contactez <?php echo $bien['username']; ?></a>        
             </section>
 
         <script src="assets/lib/jquery-3.6.0.min.js"></script>

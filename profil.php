@@ -18,7 +18,7 @@
                     <h3>Appartement</h3>
                     <p>price /nuit</p>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa quam voluptas voluptatum fuga laudantium corporis laboriosam sint, id dolor eos, ab voluptate aliquam. Accusamus ab sed dolore quasi voluptates doloremque!</p>
-                    <a href="fileproduct.php">annonce</a>               
+                    <a href="propertyad.php">annonce</a>               
                 </div>
             </div>
             <a href="newad.php">Ajouter une annonce</a>
