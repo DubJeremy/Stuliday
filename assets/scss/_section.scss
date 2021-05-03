@@ -136,7 +136,7 @@ form
 // ------------------------------------
 #products
 {
-    width: 80%;
+    width: 95%;
     height: auto;
     margin-top: 3em;
     margin-left: auto;
@@ -160,14 +160,14 @@ form
 }
 .aptsheet
 {
-    background-color: $grey;
+    // background-color: $grey;
     margin-left: 1.5em;
     margin-right: 1.5em;
-    width: 25%;
-    min-width: 400px;
+    width: 20%;
+    min-width: 370px;
     height: 450px;
     @include flex ($dir: column, $just: flex-start);
-    border: 2px solid $blue;
+    // border: 2px solid $blue;
     border-radius: 10px;
     margin-bottom: 2em;
     transition: all 0.3s ease-out;
@@ -225,7 +225,7 @@ form
     img 
     {
         width: 100%;
-        height: 450px;
+        height: 400px;
         margin-bottom: 1em;
         border-radius: 10px;
     }
@@ -272,11 +272,37 @@ form
         font-size: 3em;
         text-shadow: 1px 1px 0px $pink;
         margin-bottom: 1em;
+
+        >a
+        {
+            width: 8em;
+            background-color: transparent;
+            border: 2px solid $blue;
+            color: black;
+            text-shadow: none;
+            height: 1.5em;
+            border-radius: 25px;
+            font-family: "roboto";
+            font-size: 0.4em;
+            font-weight: 100;
+            margin-top: 1em;
+            @include flex;
+            margin-left: auto;
+            margin-right: auto;
+
+        &:hover
+        {
+            background-color: $pink;
+            color: white;
+            cursor: pointer;
+        }
+        }
     }
     >h3 
     {
         font-size: 1.5em;
         height: 2em;
+
     }
     >a
     {
@@ -289,7 +315,7 @@ form
         border-radius: 25px;
         font-family: "roboto";
         font-size: 0.8em;
-        margin-top: 1.5em;
+        margin-top: 0.5em;
         @include flex;
         margin-left: auto;
         margin-right: auto;
@@ -299,6 +325,33 @@ form
             background-color: $pink;
             color: white;
             cursor: pointer;
+        }
+    }
+}
+//----------------------------------------------------------
+#admin
+{
+    margin-top: 3em;
+    width: 100%;
+
+    div
+    {
+        width: 100%;
+        @include flex( $just:space-around, $align:flex-start);
+
+
+
+        table
+        {
+            width: 40%;
+            border: 1px solid $blue;
+
+
+            td 
+            {
+                text-align: center;
+                border: 1px solid $blue;
+            }
         }
     }
 }

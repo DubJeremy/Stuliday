@@ -66,7 +66,9 @@ if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['ti
                     <div>
                         <label for="InputCategory">Catégorie</label>
                         <select name="category" required>
-
+                            <option value="" disabled selected>
+                                Select your option
+                            </option>
                             <?php
                             foreach ($categories as $category) {
                             ?>

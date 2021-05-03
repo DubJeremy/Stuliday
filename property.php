@@ -18,7 +18,9 @@ $biens = $connect->query($sqlBiens)->fetchAll(PDO::FETCH_ASSOC);
                     ?>
                     <div class="aptsheet">
                         <img src="assets/images/apt.jpg" alt="apartment">
-                        <h3><?php echo $bien['name_category']; ?></h3>
+                        <h3>
+                            <?php echo $bien['name_category']; ?>
+                        </h3>
                         <p>
                             <?php echo $bien['price']; ?>€/nuit
                         </p>

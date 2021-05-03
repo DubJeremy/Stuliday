@@ -26,6 +26,7 @@ $categories = $connect->query($sqlCategories)->fetchAll(PDO::FETCH_ASSOC);
                         </li>
                         <li id="biens">
                             <a href="property.php">Biens</a>
+                            <i class="fas fa-sort-down"></i>
                             <ul>
                                 <?php
                                 foreach ($categories as $category) 

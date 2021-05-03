@@ -10,7 +10,7 @@ $bien = $connect->query($sqlBiens)->fetch(PDO::FETCH_ASSOC);
     <body>
             <section id='productsheet'>
                 <img src="assets/images/apt1.jpg" alt="appartment">
-                <h2><?php echo $bien['category']; ?></h2>
+                <h2><?php echo $bien['name_category']; ?></h2>
                 <p>
                     <?php echo $bien['price']; ?> €/nuit
                 </p>

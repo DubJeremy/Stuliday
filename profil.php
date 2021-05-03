@@ -25,7 +25,19 @@ if (!empty($_SESSION))
     <body>
         <section id="profil">
             <h2>
-                Bonjour <?php echo $user['username']; ?>!
+                Bonjour <?php echo $user['username'];?>! 
+                <?php
+                $sqlAdmin = "SELECT * FROM users WHERE id = '{$user_id}' AND name_role_id = '1'";
+
+                $resultAdmin = $connect->query($sqlAdmin);
+            
+                if ($admin = $resultAdmin->fetch(PDO::FETCH_ASSOC)) 
+                {
+                ?>
+                    <a href="admin.php">Page Admin</a>
+                <?php
+                }   
+                ?>
             </h2>
             <h3>Vos annonces:</h3>
             <div class="sheetrow">
