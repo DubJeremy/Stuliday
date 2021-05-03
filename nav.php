@@ -1,4 +1,10 @@
 <?php require 'inc/config.php'; ?>
+<?php
+
+$sqlCategories = "SELECT  name_category FROM categories";
+
+$categories = $connect->query($sqlCategories)->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,18 +24,21 @@
                         <li>
                             <a href="index.php">Acceuil</a>
                         </li>
-                        <li>
+                        <li id="biens">
                             <a href="property.php">Biens</a>
                             <ul>
+                                <?php
+                                foreach ($categories as $category) 
+                                {
+                                ?>
                                 <li>
-                                    <a href="">Catégorie 1</a>
+                                    <a href="#">
+                                        <?php echo $category['name_category'];?>
+                                    </a>
                                 </li>
-                                <li>
-                                    <a href="">Catégorie 2</a>
-                                </li>
-                                <li>
-                                    <a href="">Catégorie 3</a>
-                                </li>
+                                <?php
+                                }
+                                ?>
                             </ul>
                         </li>
                         <?php

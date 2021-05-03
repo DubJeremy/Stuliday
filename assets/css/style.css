@@ -15,7 +15,7 @@
 
 body {
   font-family: "roboto";
-  background-color: #fafafa;
+  background-color: #FFFFE8;
 }
 
 nav {
@@ -31,7 +31,7 @@ nav h1 {
   margin-left: 2em;
   font-weight: 900;
   font-size: 2.5em;
-  text-shadow: 1.5px 1.5px 0px #b27cc4;
+  text-shadow: 1.5px 1.5px 0px #DC758F;
 }
 nav h1 span {
   font-family: "allura";
@@ -60,7 +60,7 @@ nav div > ul li a {
   font-size: 1.2em;
 }
 nav div > ul li a:hover {
-  color: #b27cc4;
+  color: #DC758F;
   transition: 0.2s;
 }
 nav div > ul li > ul {
@@ -93,7 +93,7 @@ header > div > h2 {
   color: black;
   font-weight: 900;
   font-size: 4em;
-  text-shadow: 2px 2px 0px #b27cc4;
+  text-shadow: 2px 2px 0px #DC758F;
   text-align: center;
   width: 100%;
 }
@@ -122,7 +122,7 @@ header > div > p {
   width: 100%;
   text-align: center;
   font-size: 3em;
-  text-shadow: 1px 1px 0px #b27cc4;
+  text-shadow: 1px 1px 0px #DC758F;
 }
 #login_sigin > div .already {
   font-size: 0.9em;
@@ -142,19 +142,19 @@ form > div {
 }
 form > div input {
   margin-top: 0.5em;
-  border: 2px solid #293475;
+  border: 2px solid #161925;
   background-color: transparent;
   height: 3em;
   width: 100%;
   border-radius: 15px;
 }
 form > div small {
-  color: #b27cc4;
+  color: #DC758F;
 }
 form > div button {
   width: 8em;
   background-color: transparent;
-  border: 3px solid #293475;
+  border: 3px solid #161925;
   background-color: transparent;
   height: 2em;
   border-radius: 25px;
@@ -172,13 +172,13 @@ form > div button:active {
   border: 0px solid white;
 }
 form > div button:hover {
-  background-color: #b27cc4;
-  color: #293475;
+  background-color: #DC758F;
+  color: #161925;
   cursor: pointer;
 }
 form > div textarea {
   margin-top: 0.5em;
-  border: 2px solid #293475;
+  border: 2px solid #161925;
   background-color: transparent;
   height: 6em;
   width: 100%;
@@ -186,7 +186,7 @@ form > div textarea {
 }
 form > div select {
   margin-top: 0.5em;
-  border: 2px solid #293475;
+  border: 2px solid #161925;
   background-color: transparent;
   height: 3em;
   width: 50%;
@@ -198,7 +198,7 @@ form > div #picture {
 form > div #btnpicture {
   width: 50%;
   background-color: transparent;
-  border: 2px solid #293475;
+  border: 2px solid #161925;
   background-color: transparent;
   height: 2em;
   border-radius: 25px;
@@ -207,7 +207,7 @@ form > div #btnpicture {
   text-align: center;
 }
 form > div #btnpicture:hover {
-  color: #293475;
+  color: #161925;
   cursor: pointer;
 }
 form #check {
@@ -237,7 +237,7 @@ form #check input {
   width: 100%;
   text-align: center;
   font-size: 2.5em;
-  text-shadow: 1px 1px 0px #b27cc4;
+  text-shadow: 1px 1px 0px #DC758F;
   margin-bottom: 2em;
 }
 
@@ -251,16 +251,17 @@ form #check input {
 }
 
 .aptsheet {
-  background-color: #cdd4df;
+  background-color: #6F8AB7;
   margin-left: 1.5em;
   margin-right: 1.5em;
-  width: 30%;
+  width: 25%;
+  min-width: 400px;
   height: 450px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  border: 2px solid #293475;
+  border: 2px solid #161925;
   border-radius: 10px;
   margin-bottom: 2em;
   transition: all 0.3s ease-out;
@@ -285,7 +286,7 @@ form #check input {
   width: 8em;
   background-color: transparent;
   font-family: "roboto";
-  border: 2px solid #293475;
+  border: 2px solid #161925;
   color: black;
   height: 2em;
   border-radius: 25px;
@@ -299,8 +300,8 @@ form #check input {
   flex-direction: row;
 }
 .aptsheet > a:hover {
-  background-color: #b27cc4;
-  color: #293475;
+  background-color: #DC758F;
+  color: #161925;
   cursor: pointer;
 }
 
@@ -324,7 +325,7 @@ form #check input {
   text-transform: uppercase;
   width: 15em;
   background-color: transparent;
-  border: 2px solid #293475;
+  border: 2px solid #161925;
   color: black;
   height: 2em;
   border-radius: 25px;
@@ -339,7 +340,7 @@ form #check input {
   margin-right: auto;
 }
 #productsheet > a:hover {
-  background-color: #b27cc4;
+  background-color: #DC758F;
   color: white;
   cursor: pointer;
 }
@@ -350,13 +351,13 @@ form #check input {
   margin-right: auto;
   margin-top: 5em;
 }
-#profil h2 {
+#profil > h2 {
   text-align: center;
   font-size: 3em;
-  text-shadow: 1px 1px 0px #b27cc4;
+  text-shadow: 1px 1px 0px #DC758F;
   margin-bottom: 1em;
 }
-#profil h3 {
+#profil > h3 {
   font-size: 1.5em;
   height: 2em;
 }
@@ -364,7 +365,7 @@ form #check input {
   text-transform: uppercase;
   width: 15em;
   background-color: transparent;
-  border: 2px solid #293475;
+  border: 2px solid #161925;
   color: black;
   height: 2em;
   border-radius: 25px;
@@ -379,7 +380,7 @@ form #check input {
   margin-right: auto;
 }
 #profil > a:hover {
-  background-color: #b27cc4;
+  background-color: #DC758F;
   color: white;
   cursor: pointer;
 }

@@ -1,7 +1,7 @@
 <?php require 'nav.php' ?>
 <?php
 
-$sqlBiens = "SELECT b.*, c.name_category FROM biens AS b LEFT JOIN categories AS c ON b.category = c.name_category";
+$sqlBiens = "SELECT b.*, c.name_category FROM biens AS b LEFT JOIN categories AS c ON b.category = c.id";
 
 $biens = $connect->query($sqlBiens)->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -18,7 +18,7 @@ $biens = $connect->query($sqlBiens)->fetchAll(PDO::FETCH_ASSOC);
                     ?>
                     <div class="aptsheet">
                         <img src="assets/images/apt.jpg" alt="apartment">
-                        <h3><?php echo $bien['category']; ?></h3>
+                        <h3><?php echo $bien['name_category']; ?></h3>
                         <p>
                             <?php echo $bien['price']; ?>€/nuit
                         </p>

@@ -163,7 +163,8 @@ form
     background-color: $grey;
     margin-left: 1.5em;
     margin-right: 1.5em;
-    width: 30%;
+    width: 25%;
+    min-width: 400px;
     height: 450px;
     @include flex ($dir: column, $just: flex-start);
     border: 2px solid $blue;
@@ -265,14 +266,14 @@ form
     margin-right: auto;
     margin-top: 5em;
 
-    h2 
+    >h2 
     {
         text-align: center;
         font-size: 3em;
         text-shadow: 1px 1px 0px $pink;
         margin-bottom: 1em;
     }
-    h3 
+    >h3 
     {
         font-size: 1.5em;
         height: 2em;
