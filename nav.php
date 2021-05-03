@@ -22,7 +22,7 @@ $categories = $connect->query($sqlCategories)->fetchAll(PDO::FETCH_ASSOC);
                 <div>
                     <ul>
                         <li>
-                            <a href="index.php">Acceuil</a>
+                            <a href="index.php">Accueil</a>
                         </li>
                         <li id="biens">
                             <a href="property.php">Biens</a>

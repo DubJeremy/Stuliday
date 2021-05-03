@@ -4,13 +4,16 @@
 if (!empty($_SESSION)) 
 {
     $admin_id = $_SESSION['id'];
-    $sqlAdmin = "SELECT * FROM users WHERE id = '{$admin_id}' AND role = ('1')";
+    $sqlAdmin = "SELECT * FROM users WHERE id = '{$admin_id}' AND name_role_id = '1'";
 
     $resultAdmin = $connect->query($sqlAdmin);
 
     if ($admin = $resultAdmin->fetch(PDO::FETCH_ASSOC)) 
     {
-        $sqlUsers = "SELECT * FROM users WHERE id != '{$admin_id}'";
+        $sqlUsers = "SELECT u.*, r.name_role FROM users AS u
+        WHERE id != '{$admin_id}'
+        LEFT JOIN `role` AS r ON u.name_role_id = r.name_role";
+
         $users = $connect->query($sqlUsers)->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -34,7 +37,7 @@ if (!empty($_SESSION))
                             <th scope="row"><?php echo $user['id'] ?></th>
                             <td><?php echo $user['username'] ?></td>
                             <td><?php echo $user['email'] ?></td>
-                            <td><?php echo $user['role'] ?></td>
+                            <td><?php echo $user['name_role'] ?></td>
                             <td>Modifier</td>
                             <td>Supprimer</td>
                         </tr>
