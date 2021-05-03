@@ -63,9 +63,6 @@ nav div > ul li a:hover {
   color: #DC758F;
   transition: 0.2s;
 }
-nav div > ul li > ul {
-  display: none;
-}
 
 .deco {
   font-size: 0.8em;
@@ -73,6 +70,17 @@ nav div > ul li > ul {
 
 #burger {
   display: none;
+}
+
+#biens {
+  position: relative;
+}
+#biens > ul {
+  display: none;
+  position: absolute;
+}
+#biens > ul > li:hover {
+  cursor: pointer;
 }
 
 header {

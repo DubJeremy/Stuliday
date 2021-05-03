@@ -49,11 +49,6 @@ nav
                     transition: 0.2s;
                 }
             }
-
-            >ul
-            {
-                display: none;
-            }
         }
     }
 }
@@ -67,7 +62,23 @@ nav
 }
 #biens
 {
-    
+    position: relative;
+
+    >ul
+    {
+        display: none;
+        position: absolute;
+
+        >li
+        {
+
+            &:hover
+            {
+                cursor: pointer;
+            }
+        }
+
+    }
 }
 //-----------------------------------------------------------------------
 header

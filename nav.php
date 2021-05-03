@@ -32,7 +32,7 @@ $categories = $connect->query($sqlCategories)->fetchAll(PDO::FETCH_ASSOC);
                                 {
                                 ?>
                                 <li>
-                                    <a href="#">
+                                    <a>
                                         <?php echo $category['name_category'];?>
                                     </a>
                                 </li>
