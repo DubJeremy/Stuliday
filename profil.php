@@ -27,15 +27,10 @@ if (!empty($_SESSION))
             <h2>
                 Bonjour <?php echo $user['username'];?>! 
                 <?php
-                $sqlAdmin = "SELECT * FROM users WHERE id = '{$user_id}' AND name_role_id = '1'";
-
-                $resultAdmin = $connect->query($sqlAdmin);
             
-                if ($admin = $resultAdmin->fetch(PDO::FETCH_ASSOC)) 
+                if ($user['name_role_id'] == 1) 
                 {
-                ?>
-                    <a href="admin.php">Page Admin</a>
-                <?php
+                    echo '<a href="admin.php">Page Admin</a>';
                 }   
                 ?>
             </h2>
