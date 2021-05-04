@@ -1,6 +1,15 @@
 <?php require 'nav.php' ?>
 <?php
 
+$id = $_GET['id'];
+
+$sqlBiens = "SELECT b.*, u.username, c.name_category FROM biens AS b
+LEFT JOIN users AS u ON b.author = u.id
+LEFT JOIN categories AS c ON b.category = c.id
+WHERE b.id = {$id}";
+
+$biens = $connect->query($sqlBiens)->fetch(PDO::FETCH_ASSOC);
+//--------------------------------------------------------------------------------
 $sqlCategory = 'SELECT * FROM categories';
 
 $categories = $connect->query($sqlCategory)->fetchAll();
@@ -17,22 +26,24 @@ if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['ti
     if (is_int($price) && $price > 0) {
 
         try {
-            $sth = $connect->prepare("INSERT INTO biens
-            (adresse, title, description, price, author, category)
-            VALUES
-            (:adresse, :title,:description,:price, :author, :category)");
+            $sth = $connect->prepare("UPDATE biens
+            SET
+            (adresse=:adresse, title=:title, description=:description, price=:price, category=:category
+            WHERE b.id = :id")
+
             $sth->bindValue(':adresse', $adress);
             $sth->bindValue(':title', $title);
             $sth->bindValue(':description', $description);
             $sth->bindValue(':price', $price);
-            $sth->bindValue(':author', $user_id);
             $sth->bindValue(':category', $category);
+            $sth->bindValue(':id', $id);
 
             $sth->execute();
 
-            echo "Votre article a bien été ajouté";
+            echo "Votre article a bien été modifié";
 
-            header('Location: profil.php');
+            header('Location: product.php?id=' . $id);
+
         } catch (PDOException $error) {
             echo 'Erreur: ' . $error->getMessage();
         }
@@ -49,7 +60,7 @@ if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['ti
                 <form action="#" method="POST">
                     <div>
                         <label for="InputAdress">Adresse du bien</label>
-                        <input type="text" id="InputAdress" name="adresse" required>
+                        <input type="text" id="InputAdress" name="adresse" value="echo $biens['adresse']" required>
                     </div>
                     <div>
                         <label for="InputTitle">Titre de l'annonce</label>
