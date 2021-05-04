@@ -25,6 +25,7 @@ if (!empty($_POST['email_signup']) && !empty($_POST['password1_signup']) && !emp
                         $sth->bindValue(':password', $hashedPassword);
                         $sth->execute();
                         echo "L'utilisateur a bien été enregistré !";
+                        header('Location: login.php');
                     } else {
                         echo "Les mots de passe ne sont pas concordants.";
                         unset($_POST);

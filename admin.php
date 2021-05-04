@@ -18,11 +18,49 @@ if (!empty($_SESSION))
 
         $sqlBiens = "SELECT b.*, c.name_category FROM biens AS b LEFT JOIN categories AS c ON b.category = c.id";
 
-        $biens = $connect->query($sqlBiens)->fetchAll(PDO::FETCH_ASSOC);       
+        $biens = $connect->query($sqlBiens)->fetchAll(PDO::FETCH_ASSOC);
+        //-----------------------------------------------------------------
+        if (!empty($_POST['name_category']))
+        {
+            $category = htmlspecialchars($_POST['name_category']);
 
+            try
+            {
+                $sqlCategories = "SELECT * FROM categories WHERE name_category = '{$category}'";
+                $resultCategories = $connect->query($sqlCategories);
+                $countCategories = $resultCategories->fetchColumn();
+
+                if (!$countCategories)
+                {
+                    $sth = $connect->prepare("INSERT INTO categories (name_category)
+                    VALUES
+                    (:name_category)");
+
+                    $sth->bindValue(':name_category', $category);
+
+                    $sth->execute();
+
+                    echo "Votre catégorie à bien été ajouté!";
+                } else {
+                    echo "Cette catégorie existe déjà.";
+                    unset($_POST);
+                }
+                
+            } catch (PDOException $error)
+            {
+                echo 'Erreur: ' . $error->getMessage();
+            }
+        }
 ?>
 
     <section id="admin">
+        <form action="#" method="POST">
+            <label for="categories">Nouvelle Catégorie</label>
+            <input type="text" name="name_category" required>
+            <button type="submit" name="category_submit">
+                Ajouter
+            </button>
+        </form>
         <div>
             <table>
                 <thead>
