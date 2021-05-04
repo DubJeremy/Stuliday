@@ -26,10 +26,10 @@ if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['ti
     if (is_int($price) && $price > 0) {
 
         try {
-            $sth = $connect->prepare("UPDATE biens
+            $sth = $connect->prepare("UPDATE biens as b
             SET
-            (adresse=:adresse, title=:title, description=:description, price=:price, category=:category
-            WHERE b.id = :id")
+            adresse=:adresse, title=:title, description=:description, price=:price, category=:category
+            WHERE b.id = :id");
 
             $sth->bindValue(':adresse', $adress);
             $sth->bindValue(':title', $title);
@@ -42,7 +42,7 @@ if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['ti
 
             echo "Votre article a bien été modifié";
 
-            header('Location: product.php?id=' . $id);
+            header('Location: property.php?id=' . $id);
 
         } catch (PDOException $error) {
             echo 'Erreur: ' . $error->getMessage();
@@ -55,35 +55,33 @@ if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['ti
         <section id="login_sigin">
             <div>
                 <h2>
-                        Nouvelle annonce
+                        Modification
                 </h2>
                 <form action="#" method="POST">
                     <div>
                         <label for="InputAdress">Adresse du bien</label>
-                        <input type="text" id="InputAdress" name="adresse" value="echo $biens['adresse']" required>
+                        <input type="text" id="InputAdress" name="adresse" value='<?php echo $biens['adresse']; ?>' required>
                     </div>
                     <div>
                         <label for="InputTitle">Titre de l'annonce</label>
-                        <input type="text" id="Inuputtitle" name="title" required>
+                        <input type="text" id="Inuputtitle" name="title" value="<?php echo $biens['title']; ?>" required>
                     </div>
                     <div>
                         <label for="InputDescription">Description</label>
-                        <textarea id="InputDescription" rows="3" name="description" required></textarea>
+                        <textarea id="InputDescription" rows="3" name="description" required><?php echo $biens['description']; ?></textarea>
                     </div>
                     <div>
                         <label for="InputPrice">Prix /nuit</label>
-                        <input type="number" min="1" max="999999" id="InputPrice" placeholder="Prix de votre bien /nuit en €" name="price" required>
+                        <input type="number" min="1" max="999999" id="InputPrice" placeholder="Prix de votre bien /nuit en €" name="price" value="<?php echo $biens['price']; ?>"" required>
                     </div>
                     <div>
                         <label for="InputCategory">Catégorie</label>
                         <select name="category" required>
-                            <option value="" disabled selected>
-                                Select your option
-                            </option>
                             <?php
                             foreach ($categories as $category) {
+                                
                             ?>
-                                <option value="<?php echo $category['id']; ?>">
+                                <option <?php echo $category['id'] === $biens['category'] ? 'selected' : ''; ?> value="<?php echo $category['id']; ?>">
                                     <?php echo $category['name_category']; ?>
                                 </option>
                             <?php

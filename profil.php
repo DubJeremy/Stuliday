@@ -51,8 +51,11 @@ if (!empty($_SESSION))
                     <p>
                             <?php echo $bien['adresse']; ?>
                     </p>         
-                        <a href="propertyad.php?id=<?php echo $bien['id']; ?>">
+                    <a href="propertyad.php?id=<?php echo $bien['id']; ?>">
                         annonce
+                    </a>
+                    <a href="editpropertyad.php?id=<?php echo $bien['id']; ?>">
+                        modifier
                     </a>
                 </div>
             <?php

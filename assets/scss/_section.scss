@@ -23,12 +23,30 @@
 
     }
 }
+.alert 
+{
+    transform: scale(1.5);
+    text-align: center;
+    color: $pink;
+    animation-duration: 10s;
+    animation-name: moove;
+}
+@keyframes moove
+{
+    from
+    {
+        transform: scale(1);
+    } to
+    {
+        transform: scale(5);
+    }
+}
 //-----------------------------------------------
 form
 {
     width: 100%;
     margin-top: 2em;
-
+    
     >div
     {
         @include flex($dir: column);
@@ -160,16 +178,14 @@ form
 }
 .aptsheet
 {
-    // background-color: $grey;
     margin-left: 1.5em;
     margin-right: 1.5em;
     width: 20%;
     min-width: 370px;
-    height: 450px;
+    height: 475px;
     @include flex ($dir: column, $just: flex-start);
-    // border: 2px solid $blue;
     border-radius: 10px;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     transition: all 0.3s ease-out;
 
     &:hover
@@ -203,7 +219,7 @@ form
         font-family: "roboto";
         font-weight: 700;
         font-size: 0.8em;
-        margin-top: 2em;
+        margin-top: 1em;
         @include flex;
 
         &:hover
@@ -315,7 +331,7 @@ form
         border-radius: 25px;
         font-family: "roboto";
         font-size: 0.8em;
-        margin-top: 0.5em;
+        margin-top: -0.3em;
         @include flex;
         margin-left: auto;
         margin-right: auto;
