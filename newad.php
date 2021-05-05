@@ -53,7 +53,7 @@ if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['ti
                     </div>
                     <div>
                         <label for="InputTitle">Titre de l'annonce</label>
-                        <input type="text" id="Inuputtitle" name="title" required>
+                        <input type="text" id="Inuputtitle" maxlength="60" name="title" required>
                     </div>
                     <div>
                         <label for="InputDescription">Description</label>

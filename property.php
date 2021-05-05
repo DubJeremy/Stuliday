@@ -21,12 +21,12 @@ $biens = $connect->query($sqlBiens)->fetchAll(PDO::FETCH_ASSOC);
                         <h3>
                             <?php echo $bien['name_category']; ?>
                         </h3>
-                        <p>
+                        <p class="prix">
                             <?php echo $bien['price']; ?>€/nuit
                         </p>
-                        <p>
-                            <?php echo $bien['adresse']; ?>
-                        </p>         
+                        <h4>
+                            <?php echo $bien['title']; ?>
+                        </h4>         
                         <a href="propertyad.php?id=<?php echo $bien['id']; ?>">
                             annonce
                         </a>            

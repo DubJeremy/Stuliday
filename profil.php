@@ -45,18 +45,20 @@ if (!empty($_SESSION))
                     <h3>
                         <?php echo $bien['name_category']; ?>
                     </h3>
-                    <p>
+                    <p class="prix">
                         <?php echo $bien['price']; ?>€/nuit
                     </p>
                     <p>
                             <?php echo $bien['adresse']; ?>
-                    </p>         
-                    <a href="propertyad.php?id=<?php echo $bien['id']; ?>">
-                        annonce
-                    </a>
-                    <a href="editpropertyad.php?id=<?php echo $bien['id']; ?>">
-                        modifier
-                    </a>
+                    </p>
+                    <div>         
+                        <a href="propertyad.php?id=<?php echo $bien['id']; ?>">
+                            annonce
+                        </a>
+                        <a href="editpropertyad.php?id=<?php echo $bien['id']; ?>">
+                            modifier
+                        </a>
+                    </div>
                 </div>
             <?php
             }

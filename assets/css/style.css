@@ -288,6 +288,38 @@ form #check input {
   margin-bottom: 1.5em;
   transition: all 0.3s ease-out;
 }
+.aptsheet > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.aptsheet > div > a {
+  width: 8em;
+  background-color: transparent;
+  border: 2px solid #161925;
+  color: black;
+  text-shadow: none;
+  height: 2em;
+  border-radius: 25px;
+  font-family: "roboto";
+  font-size: 0.9em;
+  font-weight: 100;
+  margin-top: 0.4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+}
+.aptsheet > div > a:hover {
+  background-color: #DC758F;
+  color: white;
+  cursor: pointer;
+}
 .aptsheet:hover {
   box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.6);
   transform: translateY(-3px), scale(1.05), rotateX(15deg);
@@ -315,7 +347,7 @@ form #check input {
   font-family: "roboto";
   font-weight: 700;
   font-size: 0.8em;
-  margin-top: 1em;
+  margin-top: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -325,6 +357,15 @@ form #check input {
   background-color: #DC758F;
   color: #161925;
   cursor: pointer;
+}
+
+.prix {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.adress {
+  font-style: italic;
 }
 
 #productsheet {

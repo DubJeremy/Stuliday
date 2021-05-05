@@ -188,6 +188,38 @@ form
     margin-bottom: 1.5em;
     transition: all 0.3s ease-out;
 
+    >div
+    {
+        @include flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        >a
+        {
+            width: 8em;
+            background-color: transparent;
+            border: 2px solid $blue;
+            color: black;
+            text-shadow: none;
+            height: 2em;
+            border-radius: 25px;
+            font-family: "roboto";
+            font-size: 0.9em;
+            font-weight: 100;
+            margin-top: 0.4em;
+            @include flex;
+            margin-left: auto;
+            margin-right: auto;
+
+            &:hover
+            {
+                background-color: $pink;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+
     &:hover
     {
         box-shadow: 0px 8px 16px 3px rgba( #000, .6 );
@@ -219,7 +251,7 @@ form
         font-family: "roboto";
         font-weight: 700;
         font-size: 0.8em;
-        margin-top: 1em;
+        margin-top: 2em;
         @include flex;
 
         &:hover
@@ -229,6 +261,15 @@ form
             cursor: pointer;
         }
     }
+}
+.prix
+{
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.adress
+{
+    font-style: italic;
 }
 // ----------------------------------------
 #productsheet
