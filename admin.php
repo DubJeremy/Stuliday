@@ -16,7 +16,9 @@ if (!empty($_SESSION))
 
         $users = $connect->query($sqlUsers)->fetchAll(PDO::FETCH_ASSOC);
 
-        $sqlBiens = "SELECT b.*, c.name_category FROM biens AS b LEFT JOIN categories AS c ON b.category = c.id";
+        $sqlBiens = "SELECT b.*, c.name_category, u.username FROM biens AS b 
+        LEFT JOIN categories AS c ON b.category = c.id
+        LEFT JOIN users AS u ON u.id = b.author";
 
         $biens = $connect->query($sqlBiens)->fetchAll(PDO::FETCH_ASSOC);
         //-----------------------------------------------------------------
@@ -69,7 +71,6 @@ if (!empty($_SESSION))
                         <th>Username</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -82,7 +83,6 @@ if (!empty($_SESSION))
                             <td><?php echo $user['username'] ?></td>
                             <td><?php echo $user['email'] ?></td>
                             <td><?php echo $user['name_role'] ?></td>
-                            <td>Modifier</td>
                             <td>Supprimer</td>
                         </tr>
                     <?php
@@ -109,12 +109,14 @@ if (!empty($_SESSION))
                     ?>
                         <tr>
                             <th><?php echo $bien['id'] ?></th>
-                            <td><?php echo $bien['author'] ?></td>
+                            <td><?php echo $bien['username'] ?></td>
                             <td><?php echo $bien['name_category'] ?></td>
                             <td><?php echo $bien['title'] ?></td>
                             <td><?php echo $bien['price'] ?>€/nuit</td>
                             <td><?php echo $bien['adresse'] ?></td>
-                            <td>Modifier</td>
+                            <td><a href="editpropertyad.php?id=<?php echo $bien['id']; ?>">
+                            modifier
+                            </a></td>
                             <td>Supprimer</td>
                         </tr>
                     <?php
