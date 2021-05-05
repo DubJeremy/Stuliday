@@ -394,7 +394,7 @@ form
     form 
     {
         width: 400px;
-        margin-bottom: 4em;
+        margin-bottom: 2em;
         margin-left: auto;
         margin-right: auto;
     }
@@ -418,4 +418,26 @@ form
             }
         }
     }
+}
+.supp 
+{
+    color: blue;
+    width: 80px !important;
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+
+    >input 
+    {
+        background-color: transparent;
+        border: transparent;
+        width: 70px;
+        color: $pink;
+        
+
+        &:hover
+        {
+            cursor: pointer;
+        }
+    }
+
 }

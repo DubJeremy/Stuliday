@@ -484,7 +484,7 @@ form #check input {
 }
 #admin form {
   width: 400px;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -502,6 +502,22 @@ form #check input {
 #admin div table td {
   text-align: center;
   border: 1px solid #161925;
+}
+
+.supp {
+  color: blue;
+  width: 80px !important;
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+}
+.supp > input {
+  background-color: transparent;
+  border: transparent;
+  width: 70px;
+  color: #DC758F;
+}
+.supp > input:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

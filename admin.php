@@ -53,6 +53,14 @@ if (!empty($_SESSION))
                 echo 'Erreur: ' . $error->getMessage();
             }
         }
+        // --------------------------------------------------------------
+        if (isset($_POST['submit_signup']))
+        {
+            $sqlBien="DELETE FROM biens WHERE biens.id = {$id}";
+
+            $bien= $connect->query($sqlBien)->fetch(PDO::FETCH_ASSOC);
+            
+        }
 ?>
 
     <section id="admin">
@@ -83,7 +91,12 @@ if (!empty($_SESSION))
                             <td><?php echo $user['username'] ?></td>
                             <td><?php echo $user['email'] ?></td>
                             <td><?php echo $user['name_role'] ?></td>
-                            <td>Supprimer</td>
+                            <td><form action="#" method="POST" class="supp">
+                                    <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
+                                    <input type="hidden" name="id" value="<?php echo $user['id'] ?>">
+                                    <input type="submit" value="Supprimer" name="delete">
+                                </form>
+                            </td>
                         </tr>
                     <?php
                     }
@@ -105,7 +118,8 @@ if (!empty($_SESSION))
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($biens as $bien) {
+                    foreach ($biens as $bien) 
+                    {
                     ?>
                         <tr>
                             <th><?php echo $bien['id'] ?></th>
@@ -117,7 +131,11 @@ if (!empty($_SESSION))
                             <td><a href="editpropertyad.php?id=<?php echo $bien['id']; ?>">
                             modifier
                             </a></td>
-                            <td>Supprimer</td>
+                            <td>
+                                <form action="#" method="POST" class="supp">
+                                    <button>Supprimer</button>
+                                </form>
+                            </td>
                         </tr>
                     <?php
                     }
