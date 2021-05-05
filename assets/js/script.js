@@ -2,11 +2,13 @@
 {
 
 
-    $('#biens').hover(function()
+    $('#biens').on('click',function()
     {
-        $('#biens>ul').stop().slideDown("slow");
-    }, function(){
-        $('#biens>ul').stop().slideUp("slow");
+        
+        $('#biens>ul').slideToggle();
+        
     });
+
+
 
 })(jQuery);

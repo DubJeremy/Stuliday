@@ -75,11 +75,17 @@ nav div > ul li a:hover {
 #biens {
   position: relative;
 }
+#biens:hover {
+  cursor: pointer;
+}
 #biens > ul {
   display: none;
   position: absolute;
 }
 #biens > ul > li:hover {
+  cursor: pointer;
+}
+#biens > ul:hover {
   cursor: pointer;
 }
 

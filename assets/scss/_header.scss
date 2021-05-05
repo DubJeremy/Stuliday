@@ -64,10 +64,15 @@ nav
 {
     position: relative;
 
+    &:hover
+    {
+        cursor: pointer;
+    }
     >ul
     {
         display: none;
         position: absolute;
+        
 
         >li
         {
@@ -77,10 +82,14 @@ nav
                 cursor: pointer;
             }
         }
-        
+        &:hover
+        {
+            cursor: pointer;
+        }
 
     }
 }
+
 //-----------------------------------------------------------------------
 header
 {
