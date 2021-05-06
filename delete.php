@@ -1,4 +1,5 @@
-<?php require 'nav.php';
+<?php $page ="delete";
+require 'nav.php';
 
 $id = $_POST['id'];
 

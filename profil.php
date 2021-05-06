@@ -45,6 +45,12 @@ if (!empty($_SESSION['id']))
                     <img src="assets/images/apt.jpg" alt="apartment">
                     <h3>
                         <?php echo $bien['name_category']; ?>
+                        <form action="delete.php" method="POST" class="supp_ad">
+                            <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
+                            <input type="hidden" name="id" value="<?php echo $bien['id'] ?>">
+                            <input type="hidden" name="table" value="biens">
+                            <input type="submit" value="Supprimer" name="delete">
+                        </form>
                     </h3>
                     <p class="prix">
                         <?php echo $bien['price']; ?>€/nuit

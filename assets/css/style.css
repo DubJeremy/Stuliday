@@ -516,7 +516,6 @@ form #check input {
 }
 
 .supp {
-  color: blue;
   width: 80px !important;
   margin-top: 1em !important;
   margin-bottom: 1em !important;
@@ -528,6 +527,22 @@ form #check input {
   color: #DC758F;
 }
 .supp > input:hover {
+  cursor: pointer;
+}
+
+.supp_ad {
+  width: 100% !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  text-align: center;
+}
+.supp_ad > input {
+  background-color: transparent;
+  border: transparent;
+  width: 70px;
+  color: #DC758F;
+}
+.supp_ad > input:hover {
   cursor: pointer;
 }
 
