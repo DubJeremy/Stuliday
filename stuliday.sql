@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 06 mai 2021 à 09:17
+-- Généré le : jeu. 06 mai 2021 à 09:57
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `stuliday`
 --
+CREATE DATABASE IF NOT EXISTS `stuliday` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `stuliday`;
 
 -- --------------------------------------------------------
 
@@ -38,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `biens` (
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `author` (`author`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `biens`
@@ -115,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   KEY `role` (`name_role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `users`
@@ -135,7 +137,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `name_role_id`) VALU
 -- Contraintes pour la table `biens`
 --
 ALTER TABLE `biens`
-  ADD CONSTRAINT `author` FOREIGN KEY (`author`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `author` FOREIGN KEY (`author`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `users`
