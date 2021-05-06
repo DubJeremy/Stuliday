@@ -1,4 +1,5 @@
-<?php require 'nav.php' ?>
+<?php $page = 'Profil';
+require 'nav.php' ?>
 <?php
 
 if (!empty($_SESSION['id'])) 

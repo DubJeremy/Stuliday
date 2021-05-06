@@ -1,6 +1,13 @@
-<?php require 'nav.php' ?>
+<?php $page ="login";
+require 'nav.php'; ?>
 <?php
 $alert = false;
+
+if(isset($_GET['p']))
+{
+    $alert = true;
+    $message = "Vous devez vous connecter pour réaliser cette opération.";
+}
 
 if (!empty($_POST['email_login']) && !empty($_POST['password_login']) && isset($_POST['submit_login'])) {
     $email = htmlspecialchars($_POST['email_login']);

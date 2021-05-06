@@ -20,6 +20,10 @@ if (!empty($_SESSION['id']))
         LEFT JOIN users AS u ON u.id = b.author";
 
         $biens = $connect->query($sqlBiens)->fetchAll(PDO::FETCH_ASSOC);
+
+        $sqlCategory = "SELECT * FROM categories";
+
+        $categories = $connect->query($sqlCategory)->fetchAll(PDO::FETCH_ASSOC);
         //-----------------------------------------------------------------
         if (!empty($_POST['name_category']))
         {
@@ -70,6 +74,39 @@ if (!empty($_SESSION['id']))
                 Ajouter
             </button>
         </form>
+
+        <table>
+                <thead>
+                    <tr>
+                        <th>#id</th>
+                        <th>nom de la Catégorie</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($categories as $category) {
+                    ?>
+                        <tr>
+                            <th><?php echo $category['id'] ?></th>
+                            <td><?php echo $category['name_category'] ?></td>
+                            <td>
+                                <form action="delete.php" method="POST" class="supp">
+                                    <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
+                                    <input type="hidden" name="id" value="<?php echo $category['id'] ?>">
+                                    <input type="hidden" name="table" value="categories">
+                                    <input type="submit" value="Supprimer" name="delete">
+                                </form>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody> 
+            </table>
+
+
+
         <div>
             <table>
                 <thead>

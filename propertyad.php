@@ -1,4 +1,5 @@
-<?php require 'nav.php' ?>
+<?php $page ="propertyad";
+require 'nav.php' ?>
 <?php
 
 $id = $_GET['id'];

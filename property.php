@@ -1,4 +1,5 @@
-<?php require 'nav.php' ?>
+<?php $page = 'property';
+require 'nav.php'; ?>
 <?php
 
 $sqlBiens = "SELECT b.*, c.name_category FROM biens AS b LEFT JOIN categories AS c ON b.category = c.id";

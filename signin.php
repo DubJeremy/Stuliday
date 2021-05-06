@@ -1,4 +1,5 @@
-<?php require 'nav.php' ?>
+<?php $page ="singin";
+require 'nav.php' ?>
 <?php
 if (!empty($_POST['email_signup']) && !empty($_POST['password1_signup']) && !empty($_POST['password2_signup']) && !empty($_POST['username_signup']) &&  isset($_POST['submit_signup'])) 
 {

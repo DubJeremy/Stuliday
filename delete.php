@@ -16,7 +16,6 @@ if (isset($_POST['delete']) && hash_equals($token, $_POST['csrf_token'])) {
 
         if ($result) {
             header('Location: ' . $_SERVER['HTTP_REFERER']);
-            echo "La suppression est effective";
         } else {
             echo "Il ya eu un problème avec votre requête, contactez le support";
         }

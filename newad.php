@@ -1,4 +1,5 @@
-<?php require 'nav.php' ?>
+<?php $page ="newad";
+require 'nav.php'; ?>
 <?php
 
 $sqlCategory = 'SELECT * FROM categories';

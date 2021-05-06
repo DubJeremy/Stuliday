@@ -1,4 +1,5 @@
-<?php require 'nav.php' ?>
+<?php $page = 'Home';
+require 'nav.php' ?>
     <body>
     <!--------------------------------------------------->
            <div>

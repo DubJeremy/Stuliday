@@ -147,16 +147,16 @@ header > div > p {
   transform: scale(1.5);
   text-align: center;
   color: #DC758F;
-  animation-duration: 10s;
+  animation-duration: 1s;
   animation-name: moove;
 }
 
 @keyframes moove {
   from {
-    transform: scale(1);
+    transform: scale(0.5);
   }
   to {
-    transform: scale(5);
+    transform: scale(1.5);
   }
 }
 form {
@@ -481,6 +481,17 @@ form #check input {
 #admin {
   margin-top: 3em;
   width: 100%;
+}
+#admin > table {
+  width: 40%;
+  border: 1px solid #161925;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+}
+#admin > table td {
+  text-align: center;
+  border: 1px solid #161925;
 }
 #admin form {
   width: 400px;
