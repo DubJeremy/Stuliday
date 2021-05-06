@@ -1,7 +1,7 @@
 <?php require 'nav.php' ?>
 <?php
 
-if (!empty($_SESSION)) 
+if (!empty($_SESSION['id'])) 
 {
 
     $user_id = $_SESSION['id'];

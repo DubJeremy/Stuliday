@@ -1,7 +1,6 @@
-<?php require 'nav.php'; ?>
-<?php
+<?php require 'nav.php'; 
 
-if (!empty($_SESSION)) 
+if (!empty($_SESSION['id'])) 
 {
     $admin_id = $_SESSION['id'];
     $sqlAdmin = "SELECT * FROM users WHERE id = '{$admin_id}' AND name_role_id = '1'";
@@ -91,9 +90,11 @@ if (!empty($_SESSION))
                             <td><?php echo $user['username'] ?></td>
                             <td><?php echo $user['email'] ?></td>
                             <td><?php echo $user['name_role'] ?></td>
-                            <td><form action="#" method="POST" class="supp">
+                            <td>
+                                <form action="delete.php" method="POST" class="supp">
                                     <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
                                     <input type="hidden" name="id" value="<?php echo $user['id'] ?>">
+                                    <input type="hidden" name="table" value="users">
                                     <input type="submit" value="Supprimer" name="delete">
                                 </form>
                             </td>
@@ -101,7 +102,7 @@ if (!empty($_SESSION))
                     <?php
                     }
                     ?>
-                </tbody>
+                </tbody> 
             </table>
             <table>
                 <thead>
@@ -132,8 +133,11 @@ if (!empty($_SESSION))
                             modifier
                             </a></td>
                             <td>
-                                <form action="#" method="POST" class="supp">
-                                    <button>Supprimer</button>
+                                <form action="delete.php" method="POST" class="supp">
+                                    <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
+                                    <input type="hidden" name="id" value="<?php echo $bien['id'] ?>">
+                                    <input type="hidden" name="table" value="biens">
+                                    <input type="submit" value="Supprimer" name="delete">
                                 </form>
                             </td>
                         </tr>

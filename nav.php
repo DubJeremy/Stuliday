@@ -47,7 +47,7 @@ $categories = $connect->query($sqlCategories)->fetchAll(PDO::FETCH_ASSOC);
                             </ul>
                         </li>
                         <?php
-                        if (empty($_SESSION)) {
+                        if (empty($_SESSION['username'])) {
                         ?>
                             <li>
                                 <p>
