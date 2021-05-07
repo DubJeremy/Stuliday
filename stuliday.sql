@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 06 mai 2021 à 09:57
+-- Généré le : ven. 07 mai 2021 à 11:26
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -38,22 +38,25 @@ CREATE TABLE IF NOT EXISTS `biens` (
   `author` int(10) NOT NULL,
   `category` int(10) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `image` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `author` (`author`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `biens`
 --
 
-INSERT INTO `biens` (`id`, `adresse`, `price`, `description`, `author`, `category`, `title`) VALUES
-(1, '221b Baker Street London', 75, 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia eligendi neque dignissimos unde autem cupiditate rem, sequi eveniet doloribus illum debitis natus alias corrupti saepe, qui dolorum consectetur quos except.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia eligendi neque dignissimos unde autem cupiditate rem, sequi eveniet doloribus illum debitis natus alias corrupti saepe, qui dolorum consectetur quos except', 4, 2, '120mÂ² + terrasse + spa de fou'),
-(3, '45Â° nebuleuse verte F645 Namek', 2415, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis fuga molestias culpa. Aliquid quisquam omnis eum quos! Atque eveniet sint ullam harum corrupti error eum nisi corporis reprehenderit? Sunt, ex.', 4, 3, 'GÃ®te posÃ© sur Namek'),
-(4, 'Rue du feu de la vÃ©ritÃ©e Konoha', 789, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis fuga molestias culpa. Aliquid quisquam omnis eum quos! Atque eveniet sint ullam harum corrupti error eum nisi corporis reprehenderit? Sunt, ex.', 4, 1, 'Apt cosy avec vue sur la montagne des Hokage'),
-(6, '124 rue des Conques, Bikini Bottom', 99, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat incidunt veritatis eaque, quia unde! Eveniet tempora dolorem atque quaerat suscipit quidem nam, reiciendis laudantium libero deleniti illum harum id.', 5, 3, 'ananas de fou a 2 pas du Crabe Croustillant'),
-(8, 'Station spatial internationale', 78000, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, laudantium recusandae deleniti provident reiciendis similique non ratione quod ipsam quisquam pariatur deserunt voluptates exercitationem saepe? Aliquid dicta consectetur neque laborum.', 5, 4, 'Capsule vu sur l\'espace'),
-(14, '76 rue des Braco, Gotham', 5, 'AHAHAHAAHHAAHHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAHAHAHAHHA', 5, 1, 'Petit appart Ã  deux pas du comico'),
-(15, '55 Rue du Faubourg Saint-HonorÃ©, 75008 Paris', 44567, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos quisquam reiciendis voluptatum delectus eum laudantium necessitatibus asperiores quasi quod provident dolore fuga magni, commodi possimus aliquid ipsam et sed?', 7, 4, 'Chambre en face de celle de Manu ');
+INSERT INTO `biens` (`id`, `adresse`, `price`, `description`, `author`, `category`, `title`, `image`) VALUES
+(1, '221b Baker Street London', 75, 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia eligendi neque dignissimos unde autem cupiditate rem, sequi eveniet doloribus illum debitis natus alias corrupti saepe, qui dolorum consectetur quos except.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia eligendi neque dignissimos unde autem cupiditate rem, sequi eveniet doloribus illum debitis natus alias corrupti saepe, qui dolorum consectetur quos except', 4, 2, '120mÂ² + terrasse + spa de fou', NULL),
+(3, '45Â° nebuleuse verte F645 Namek', 2415, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis fuga molestias culpa. Aliquid quisquam omnis eum quos! Atque eveniet sint ullam harum corrupti error eum nisi corporis reprehenderit? Sunt, ex.', 4, 3, 'GÃ®te posÃ© sur Namek', '609523b19dd13_spidey-face.jpg'),
+(4, 'Rue du feu de la vÃ©ritÃ©e Konoha', 789, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis fuga molestias culpa. Aliquid quisquam omnis eum quos! Atque eveniet sint ullam harum corrupti error eum nisi corporis reprehenderit? Sunt, ex.', 4, 1, 'Apt cosy avec vue sur la montagne des Hokage', '6095239f025a5_naruto.jpg'),
+(6, '124 rue des Conques, Bikini Bottom', 99, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat incidunt veritatis eaque, quia unde! Eveniet tempora dolorem atque quaerat suscipit quidem nam, reiciendis laudantium libero deleniti illum harum id.', 5, 3, 'ananas de fou a 2 pas du Crabe Croustillant', '6095223b4660e_apt2.jpg'),
+(8, 'Station spatial internationale', 78000, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, laudantium recusandae deleniti provident reiciendis similique non ratione quod ipsam quisquam pariatur deserunt voluptates exercitationem saepe? Aliquid dicta consectetur neque laborum.', 5, 4, 'Capsule vu sur l\'espace', '6095219897d71_apt1.jpg'),
+(14, '76 rue des Braco, Gotham', 5, 'AHAHAHAAHHAAHHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAHAHAHAHHA', 5, 1, 'Petit appart Ã  deux pas du comico', '60952248a059a_apt.jpg'),
+(15, '55 Rue du Faubourg Saint-HonorÃ©, 75008 Paris', 44567, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos quisquam reiciendis voluptatum delectus eum laudantium necessitatibus asperiores quasi quod provident dolore fuga magni, commodi possimus aliquid ipsam et sed?', 7, 4, 'Chambre en face de celle de Manu ', NULL),
+(20, '124 rue des Conques, Bikini B.fff', 23, 'lorem c\'est long', 5, 4, 'Petit appart Ã  deux pas du comicofff', '6095226cb3f2c_chat.png'),
+(22, '124 rue des Conques, Bikini B.www', 1, 'wwwwww', 5, 4, 'www', '609503ce40cce_spidey-face.jpg');
 
 -- --------------------------------------------------------
 
