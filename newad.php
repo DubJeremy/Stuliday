@@ -6,7 +6,8 @@ $sqlCategory = 'SELECT * FROM categories';
 
 $categories = $connect->query($sqlCategory)->fetchAll();
 
-if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['price']) && !empty($_POST['category'])) {
+if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['price']) && !empty($_POST['category'])) 
+{
 
     $adress = strip_tags($_POST['adresse']);
     $title = strip_tags($_POST['title']);
@@ -15,27 +16,81 @@ if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['ti
     $category = strip_tags($_POST['category']);
     $user_id = $_SESSION['id'];
 
-    if (is_int($price) && $price > 0) {
+    $image = $_FILES['bien_image'];
 
-        try {
-            $sth = $connect->prepare("INSERT INTO biens
-            (adresse, title, description, price, author, category)
-            VALUES
-            (:adresse, :title,:description,:price, :author, :category)");
-            $sth->bindValue(':adresse', $adress);
-            $sth->bindValue(':title', $title);
-            $sth->bindValue(':description', $description);
-            $sth->bindValue(':price', $price);
-            $sth->bindValue(':author', $user_id);
-            $sth->bindValue(':category', $category);
+    if ($image['size'] > 0)
+    {
+        if ($image['size'] <= 1000000)
+        {
 
-            $sth->execute();
+            $valid_ext = ['jpg', 'jpeg', 'png'];
+            $check_ext = strtolower(substr(strrchr($image['name'], '.'), 1));
 
-            echo "Votre article a bien été ajouté";
+            if (in_array($check_ext, $valid_ext))
+            {
 
-            header('Location: profil.php');
-        } catch (PDOException $error) {
-            echo 'Erreur: ' . $error->getMessage();
+                $image_name = uniqid() . '_' . $image['name'];
+                $upload_dir = "assets/images/";
+                $upload_name = $upload_dir . $image_name;
+                $upload_result = move_uploaded_file($image['tmp_name'], $upload_name);
+                if ($upload_result) 
+                {
+
+                    if (is_int($price) && $price > 0) 
+                    {
+
+                        try 
+                        {
+                            $sth = $connect->prepare("INSERT INTO biens
+                            (adresse, title, description, price, author, category, image)
+                            VALUES
+                            (:adresse, :title,:description,:price, :author, :category, :image)");
+                            $sth->bindValue(':adresse', $adress);
+                            $sth->bindValue(':title', $title);
+                            $sth->bindValue(':description', $description);
+                            $sth->bindValue(':price', $price);
+                            $sth->bindValue(':author', $user_id);
+                            $sth->bindValue(':category', $category);
+                            $sth->bindValue(':image', $image_name);
+
+                            $sth->execute();
+
+                            echo "Votre article a bien été ajouté";
+
+                            header('Location: profil.php');
+                        } catch (PDOException $error) 
+                        {
+                            echo 'Erreur: ' . $error->getMessage();
+                        }
+                    }
+                }
+            }
+        }
+    }else {
+
+        if (is_int($price) && $price > 0) {
+
+            try {
+
+                $sth = $connect->prepare("INSERT INTO biens
+                (adresse, title, description, price, author, category)
+                VALUES
+                (:adresse, :title,:description,:price, :author, :category)");
+
+                $sth->bindValue(':adresse', $adress);
+                $sth->bindValue(':title', $title);
+                $sth->bindValue(':description', $description);
+                $sth->bindValue(':price', $price);
+                $sth->bindValue(':author', $user_id);
+                $sth->bindValue(':category', $category);
+
+                $sth->execute();
+
+                echo "Votre article a bien été ajouté";
+
+            } catch (PDOException $error) {
+                echo 'Erreur: ' . $error->getMessage();
+            }
         }
     }
 }
@@ -47,7 +102,7 @@ if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['ti
                 <h2>
                         Nouvelle annonce
                 </h2>
-                <form action="#" method="POST">
+                <form action="#" method="POST" enctype="multipart/form-data">
                     <div>
                         <label for="InputAdress">Adresse du bien</label>
                         <input type="text" id="InputAdress" name="adresse" required>
@@ -82,10 +137,10 @@ if (isset($_POST['ad_submit']) && !empty($_POST['adresse']) && !empty($_POST['ti
                         </select>
                     </div>
                     <div>
-                        <label id="btnpicture" for="picture">Choisissez une photo de votre bien</label>
-                        <input type="file"
-                            id="picture" name="picture"
-                            accept="image/png, image/jpeg">
+                        <label for="picture" id="btnpicture">
+                            Choisissez une photo de votre bien
+                        </label>
+                        <input type="file" id="picture" name="bien_image" accept=".png, .jpeg, .jpg">
                     </div>
                     <div>
                         <button type="submit" name="ad_submit">

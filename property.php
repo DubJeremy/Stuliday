@@ -18,7 +18,17 @@ $biens = $connect->query($sqlBiens)->fetchAll(PDO::FETCH_ASSOC);
                     {
                     ?>
                     <div class="aptsheet">
-                        <img src="assets/images/apt.jpg" alt="apartment">
+                        <div class="image">
+                            <?php if (is_null($bien['image']) || empty($bien['image']))
+                             {
+                            echo "<img src='assets/images/noimage.jpg' alt='product_image'/> ";
+                            } else {
+                            ?>
+                                <img src="assets/images/<?php echo $bien['image']; ?>" alt='<?php echo $bien['name_category']; ?>' />
+                            <?php
+                            }
+                            ?>
+                        </div>
                         <h3>
                             <?php echo $bien['name_category']; ?>
                         </h3>

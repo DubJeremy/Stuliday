@@ -14,7 +14,17 @@ $bien = $connect->query($sqlBiens)->fetch(PDO::FETCH_ASSOC);
 ?>
     <body>
             <section id='productsheet'>
-                <img src="assets/images/apt1.jpg" alt="appartment">
+                <div id="img">
+                    <?php if (is_null($bien['image']) || empty($bien['image']))
+                        {
+                    echo "<img src='assets/images/noimage.jpg' alt='product_image'/> ";
+                    } else {
+                    ?>
+                        <img src="assets/images/<?php echo $bien['image']; ?>" alt='<?php echo $bien['name_category']; ?>' />
+                    <?php
+                    }
+                    ?>
+                </div>
                 <h2><?php echo $bien['name_category']; ?></h2>
                 <p class='prix'>
                     <?php echo $bien['price']; ?> €/nuit
