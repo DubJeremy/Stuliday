@@ -367,28 +367,33 @@ form
         height: 2em;
 
     }
-    >a
+    #btnajoutannonce
     {
-        text-transform: uppercase;
-        width: 15em;
-        background-color: transparent;
-        border: 2px solid $blue;
-        color: black;
-        height: 2em;
-        border-radius: 25px;
-        font-family: "roboto";
-        font-size: 0.8em;
-        margin-top: -0.3em;
-        margin-bottom: 1em;
-        @include flex;
-        margin-left: auto;
-        margin-right: auto;
-
-        &:hover
+        height: 4em;
+        margin-top: 1em;
+        >a
         {
-            background-color: $pink;
-            color: white;
-            cursor: pointer;
+            text-transform: uppercase;
+            width: 15em;
+            background-color: transparent;
+            border: 2px solid $blue;
+            color: black;
+            height: 2em;
+            border-radius: 25px;
+            font-family: "roboto";
+            font-size: 0.8em;
+            margin-top: -0.3em;
+            margin-bottom: 1em;
+            @include flex;
+            margin-left: auto;
+            margin-right: auto;
+
+            &:hover
+            {
+                background-color: $pink;
+                color: white;
+                cursor: pointer;
+            }
         }
     }
 }

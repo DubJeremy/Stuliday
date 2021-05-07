@@ -81,7 +81,9 @@ if (!empty($_SESSION['id']))
             }
             ?>
             </div>
-            <a href="newad.php">Ajouter une annonce</a>
+            <div id="btnajoutannonce">
+                <a href="newad.php">Ajouter une annonce</a>
+            </div>
     <?php
     }
     ?>
